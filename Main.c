@@ -44,7 +44,7 @@ void Do_Setup(void);
 void do_update_pwm(char);
 void Set_RGB_Color(char color);
 
-char buffer[31]         = " ECE3301L Fall'20 L12\0";
+char buffer[31]         = "ECE3301 Fall20 Final\0";
 char *nbr;
 char *txt;
 char tempC[]            = "+25";

@@ -64,13 +64,13 @@ void Initialize_Setup_Fan_Screen(void)
 {
     fillScreen(ST7735_BLACK);                                                                       // Fills background of screen with color passed to it
 
-    strcpy(txt, "ECE3301L Fall20 Final\0");                                                         // Text displayed
+    strcpy(txt, "ECE3301 Fall20 Final\0");                                                         // Text displayed
     drawtext(start_x , start_y, txt, ST7735_WHITE  , ST7735_BLACK, TS_1);                           // X and Y coordinates of where the text is to be displayed
 
-    strcpy(txt, " Fan Setup\0");
+    strcpy(txt, "Temp Setup\0");
     drawtext(start_x , start_y+25, txt, ST7735_YELLOW, ST7735_BLACK, TS_2);
 
-    strcpy(txt, "  Set Fan Temp");
+    strcpy(txt, "Set Target Temp");
     drawtext(setup_fan_x , setup_fan_y, txt, ST7735_CYAN  , ST7735_BLACK, TS_1);
 }
 

@@ -159,7 +159,7 @@ void Initialize_Setup_Time_Screen(void)
 {
     fillScreen(ST7735_BLACK);                                                                       // Fills background of screen with color passed to it
 
-    strcpy(txt, "ECE3301L Fall20 Final\0");                                                         // Text displayed
+    strcpy(txt, "ECE3301 Fall20 Final\0");                                                         // Text displayed
     drawtext(start_x , start_y, txt, ST7735_WHITE  , ST7735_BLACK, TS_1);                           // X and Y coordinates of where the text is to be displayed
 
 

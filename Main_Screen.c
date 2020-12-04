@@ -37,7 +37,7 @@ void Initialize_Screen(void)
     TFT_GreenTab_Initialize();
     fillScreen(ST7735_BLACK);                                                                       // Fills background of screen with color passed to it
 
-    strcpy(txt, "ECE3301L Fall20 Final\0");                                                         // Text displayed
+    strcpy(txt, "ECE3301 Fall20 Final\0");                                                         // Text displayed
     drawtext(start_x , start_y, txt, ST7735_WHITE  , ST7735_BLACK, TS_1);                           // X and Y coordinates of where the text is to be displayed
 
     strcpy(txt, "Temperature:");
@@ -56,9 +56,9 @@ void Initialize_Screen(void)
     drawtext(alarm_time_x  , alarm_time_y , txt, ST7735_YELLOW, ST7735_BLACK, TS_1);
     strcpy(txt, "Alarm SW");
     drawtext(alarm_sw_x, alarm_sw_y, txt, ST7735_YELLOW, ST7735_BLACK, TS_1);
-    strcpy(txt, "FAN Set Temp");
+    strcpy(txt, "Ctr Set Temp");
     drawtext(fan_set_temp_x, fan_set_temp_y, txt, ST7735_BLUE  , ST7735_BLACK, TS_1);
-    strcpy(txt, "Fan SW");
+    strcpy(txt, "Ctrl SW");
     drawtext(fan_sw_x, fan_sw_y, txt, ST7735_BLUE  , ST7735_BLACK, TS_1);
     strcpy(txt, "DC");
     drawtext(dc_x, dc_y, txt, ST7735_WHITE  , ST7735_BLACK, TS_1);
@@ -66,8 +66,6 @@ void Initialize_Screen(void)
     drawtext(rtc_x, rtc_y, txt, ST7735_WHITE       , ST7735_BLACK  , TS_1);
     strcpy(txt, "Volt");
     drawtext(volt_x, volt_y, txt, ST7735_WHITE       , ST7735_BLACK  , TS_1);
-    strcpy(txt, "RPM");
-    drawtext(rpm_x, rpm_y, txt, ST7735_WHITE       , ST7735_BLACK  , TS_1);
 
 }
 void Update_Screen(void)
@@ -166,7 +164,6 @@ void Update_Screen(void)
     drawtext(data_dc_x, data_dc_y, DC_Txt, ST7735_GREEN, ST7735_BLACK, TS_1);
     drawtext(data_rtc_x, data_rtc_y, RTC_ALARM_Txt, ST7735_GREEN, ST7735_BLACK, TS_1);
     drawtext(data_volt_x, data_volt_y, Volt_Txt, ST7735_GREEN, ST7735_BLACK, TS_1);
-    drawtext(data_rpm_x, data_rpm_y, RPM_Txt, ST7735_GREEN, ST7735_BLACK, TS_1);
 }
 
 

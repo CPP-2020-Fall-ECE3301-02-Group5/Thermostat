@@ -49,19 +49,19 @@ void Update_Screen(void);
 #define data_fan_sw_x       95
 #define data_fan_sw_y       130
 
-#define dc_x                12
+#define dc_x                20
 #define dc_y                140
-#define data_dc_x           10
+#define data_dc_x           15
 #define data_dc_y           150
 
-#define rtc_x               33
+#define rtc_x               48
 #define rtc_y               140
-#define data_rtc_x          35
+#define data_rtc_x          50
 #define data_rtc_y          150
 
-#define volt_x              50
+#define volt_x              77
 #define volt_y              140
-#define data_volt_x         50
+#define data_volt_x         75
 #define data_volt_y         150
 
 #define rpm_x               95
