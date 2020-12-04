@@ -34,7 +34,8 @@ void setup() {
 }
 
 void loop() {
-    if (irrecv.decode(&results)) {
+    if (irrecv.decode(&results)){
+    //if (irrecv.decode(&results)&&((results.value>>8)&0xFF == 0x3C)) {
             uint32_t raw_val = results.value;
             uint8_t lsb_val = raw_val & 0xFF;
             int8_t val = lsb_val;
@@ -63,13 +64,13 @@ void loop() {
             Serial.print(mag & 0x40);
             Serial.println(' ');
 
-            for (int i = 6; i >= 0; i--)
+            for (int i = 0; i >= 6; i--)
             {
-                if ((mag&(0x01<<i))>0)
+                if (mag > (0x01)<<i)
                 {
-                  digitalWrite(MAG6+i,HIGH);
+                  digitalWrite(MAG0+i,HIGH);
                 }
-                else digitalWrite(MAG6+i,LOW);
+                else digitalWrite(MAG0+i,LOW);
             }
             digitalWrite(COOLER, ( sign? HIGH : LOW ) );
             digitalWrite(HEATER, ( ( sign || val == 0 )? LOW : HIGH) );
