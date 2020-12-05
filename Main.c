@@ -78,6 +78,10 @@ unsigned char setup_second, setup_minute, setup_hour, setup_day, setup_month, se
 unsigned char setup_fan_temp = 75;
 float volt;
 int duty_cycle;
+int rpm;
+
+int Tach_cnt = 0;
+
 
 void putch (char c)
 {
@@ -228,6 +232,7 @@ void Monitor_Fan()
 {
     duty_cycle = get_duty_cycle(DS1621_tempF, setup_fan_temp);
     do_update_pwm(duty_cycle);
+    rpm = get_RPM();
 }
 
 float read_volt()
@@ -245,10 +250,16 @@ int get_duty_cycle(int temp, int set_temp)
                        return dccalc;                                                             // -99 <= dccalc <= 99, return
 }
 
+int get_RPM()
+{
+    return Tach_cnt*60;
+}
+
 void Turn_Off_Fan()
 {
     duty_cycle = 0;
     do_update_pwm(duty_cycle);
+    rpm = 0;
     FANEN = 0;
     FANEN_LED = 0;
 }
